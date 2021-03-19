@@ -1,0 +1,56 @@
+<div class="container bootstrap snippets bootdey">
+    <div class="col-md-9 col-sm-8 content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-info panel-shadow">
+                
+                    <div class="panel-body"> 
+                        <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                               
+                            </tr>
+                            </thead>
+                            <tbody   >
+                                <tr *ngFor="let item  of items">
+                                    <td><img [src]="item.imageurl" class="img-cart"></td>
+                                    <td><strong>{{item.name}}</strong></td>
+                                    <td>
+                                    <form class="form-inline">
+                                        <label class="form-control" type="text" value="1">
+                                            {{item.quantity}}
+                                     </label>
+                                    </form>
+                                    </td>
+                                    <td>Rs.{{item.price*item.quantity}}</td>
+                                  
+                                </tr>
+                               
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                             
+                                <tr>
+                                    <td colspan="4" class="text-right">Total Shipping</td>
+                                    <td>{{items.length}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-right"><strong>Total</strong></td>
+                                    <td>Rs.{{total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                </div>
+                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"  [routerLink] = "''"></span>&nbsp;Continue Shopping</a>
+                <button class="btn btn-success my-2 my-sm-0 checkout" type="submit" [routerLink] = "'/checkout'">Checkout</button>
+            </div>
+        </div>
+    </div>
+</div>
